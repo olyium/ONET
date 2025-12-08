@@ -43,7 +43,6 @@ func ConnectionHandlerClientLoggedIn(CONNECTION net.Conn) {
 			if INPUT == ".methods" {
 				OUTPUT = Methods(CONNECTION)
 			}
-
 			break
 		}
 
