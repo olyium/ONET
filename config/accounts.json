@@ -1,7 +1,6 @@
 [
     {
-        "user": "admin",
-        "pass": "123",
-        "status": "staff"
+        "USERNAME": "admin",
+        "PASSWORD": "123"
     }
 ]

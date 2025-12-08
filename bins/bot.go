@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"net"
+	"os"
 )
 
 var (
@@ -11,14 +13,15 @@ var (
 )
 
 func main() {
-	// still in works
-	SERVER, _ := net.ResolveTCPAddr("TCP", IP+":"+PORT)
-	CONNECTION, _ := net.DialTCP("TCP", nil, SERVER)
 
-	for {
-		RECEIVED := make([]byte, 1024)
-		_, _ = CONNECTION.Read(RECEIVED)
-		fmt.Println(RECEIVED)
+	CONNECTION, ERR := net.Dial("tcp", IP+":"+PORT)
+	if ERR != nil {
+		os.Exit(1)
+	}
+
+	ConnectionScanner := bufio.NewScanner(CONNECTION)
+	for ConnectionScanner.Scan() {
+		fmt.Println(ConnectionScanner.Text())
 	}
 
 }
