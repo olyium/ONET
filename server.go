@@ -14,7 +14,7 @@ type DATA struct {
 }
 
 func main() {
-	// onet server
+
 	if _, ERR := os.Stat("./config/config.json"); ERR != nil {
 		fmt.Println("\033[31mserver, could not located config.json!\033[0m")
 		os.Exit(1)

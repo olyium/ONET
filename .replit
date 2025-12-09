@@ -4,3 +4,12 @@ expertMode = true
 
 [nix]
 channel = "stable-25_05"
+packages = ["inetutils"]
+
+[[ports]]
+localPort = 141
+externalPort = 80
+
+[[ports]]
+localPort = 271
+externalPort = 3000
